@@ -4,7 +4,8 @@ install:
 
 # Запуск программ
 gendiff:
-	poetry run gendiff
+	poetry run gendiff -h
+#	poetry run gendiff
 
 # Сборка проекта в whl файл
 build:
@@ -28,4 +29,4 @@ test:
 test-coverage:
 	poetry run pytest --cov=python-project-lvl1 --cov-report xml
 
-.PHONY: install test lint selfcheck check build
+.PHONY: install test lint selfcheck check build gendiff
