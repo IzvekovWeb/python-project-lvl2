@@ -1,4 +1,4 @@
-name: Test Linter
+name: Linter and Tests
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
         - '**'
 
 jobs:
-  lint:
+  Lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -27,9 +27,9 @@ jobs:
         run: poetry install
 
       - name: Run Lint
-        run: poetry run flake8 brain_games
+        run: poetry run flake8 gendiff
 
-  check-test:
+  Test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
