@@ -4,8 +4,8 @@ install:
 
 # Запуск программ
 gendiff:
-# 	poetry run gendiff 'file1.json' 'file2.json'
-	poetry run gendiff
+	poetry run gendiff 'gendiff/file1.json' 'gendiff/file2.json'
+#	poetry run gendiff
 
 # Сборка проекта в whl файл
 build:
