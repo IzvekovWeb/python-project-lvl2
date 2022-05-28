@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri May 27 11:31:26 2022
+# Make data base, printed on Sat May 28 11:03:24 2022
 
 # Variables
 
@@ -49,11 +51,11 @@ VSCODE_CWD = /mnt/d/Pro100Sany/Программы/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/pro100sany/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/bin/remote-cli:/home/pro100sany/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/d/Pro100Sany/Программы/Git/cmd:/mnt/c/Users/sasiz/AppData/Local/Programs/Python/Python39/Scripts/:/mnt/c/Users/sasiz/AppData/Local/Programs/Python/Python39/:/mnt/c/Users/sasiz/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/sasiz/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/sasiz/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/sasiz/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Python 3.10:/mnt/d/Pro100Sany/Программы/PyCharm Community Edition 2021.3.3/bin:/mnt/c/Program Files/7-Zip:/mnt/d/Pro100Sany/Программы/Microsoft VS Code/bin:/mnt/c/Users/sasiz/AppData/Roaming/Python/Scripts:/mnt/c/Users/sasiz/AppData/Roaming/Python/Python310/Scripts:/snap/bin
+PATH = /home/pro100sany/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/bin/remote-cli:/home/pro100sany/.local/bin:/home/pro100sany/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/d/Pro100Sany/Программы/Git/cmd:/mnt/c/Users/sasiz/AppData/Local/Programs/Python/Python39/Scripts/:/mnt/c/Users/sasiz/AppData/Local/Programs/Python/Python39/:/mnt/c/Users/sasiz/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/sasiz/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/sasiz/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/sasiz/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Python 3.10:/mnt/d/Pro100Sany/Программы/PyCharm Community Edition 2021.3.3/bin:/mnt/c/Program Files/7-Zip:/mnt/d/Pro100Sany/Программы/Microsoft VS Code/bin:/mnt/c/Users/sasiz/AppData/Roaming/Python/Scripts:/mnt/c/Users/sasiz/AppData/Roaming/Python/Python310/Scripts:/snap/bin
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-01ee49f0-55ae-4b86-9a25-8fe87fd5786f.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-a46f88ad-1e20-440d-a89c-15f0b1ad4bb0.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -77,7 +79,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 LOGNAME = pro100sany
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -155,9 +157,9 @@ MOTD_SHOWN = update-motd
 
 # Directories
 
-# . (device 47, inode 2533274790410348): 14 files, no impossibilities.
+# . (device 47, inode 2533274790410348): 19 files, no impossibilities.
 
-# 14 files, no impossibilities in 1 directories.
+# 19 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -169,8 +171,8 @@ package-install:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 19):
-	python3 -m pip install --force-reinstall --user dist/*.whl
+#  recipe to execute (from 'Makefile', line 20):
+	python3 -m pip install --force-reinstall dist/*.whl
 
 selfcheck:
 #  Phony target (prerequisite of .PHONY).
@@ -185,22 +187,15 @@ all:
 #  File does not exist.
 #  File has not been updated.
 
-.PHONY: install test lint selfcheck check build
+.PHONY: install test lint selfcheck check build gendiff
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-
-test-coverage:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 29):
-	poetry run pytest --cov=python-project-lvl1 --cov-report xml
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-26 18:58:07.1744536
+#  Last modified 2022-05-27 16:30:53.3918947
 #  File has been updated.
 #  Successfully updated.
 
@@ -209,7 +204,7 @@ test:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 26):
+#  recipe to execute (from 'Makefile', line 27):
 	poetry run pytest
 
 build:
@@ -217,7 +212,7 @@ build:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 11):
+#  recipe to execute (from 'Makefile', line 12):
 	poetry build
 
 # Not a target:
@@ -226,11 +221,18 @@ build:
 #  Modification time never checked.
 #  File has not been updated.
 
+test-cov:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 30):
+	poetry run pytest --cov=gendiff --cov-report xml
+
 publish:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 15):
+#  recipe to execute (from 'Makefile', line 16):
 	poetry publish --dry-run
 
 lint:
@@ -238,7 +240,7 @@ lint:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 23):
+#  recipe to execute (from 'Makefile', line 24):
 	poetry run flake8 gendiff
 
 check:
@@ -248,11 +250,12 @@ check:
 #  File has not been updated.
 
 gendiff:
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 7):
-	poetry run gendiff
+	poetry run gendiff 'gendiff/file1.json' 'gendiff/file2.json'
 
 install:
 #  Phony target (prerequisite of .PHONY).
@@ -263,22 +266,20 @@ install:
 	poetry install
 
 # files hash-table stats:
-# Load=15/1024=1%, Rehash=0, Collisions=0/31=0%
+# Load=15/1024=1%, Rehash=0, Collisions=0/32=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 29 / storage = 250 B / avg = 8 B
-# current buf: size = 8162 B / used = 250 B / count = 29 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 34 / storage = 298 B / avg = 8 B
+# current buf: size = 8162 B / used = 298 B / count = 34 / avg = 8 B
 
-# strcache performance: lookups = 47 / hit rate = 38%
+# strcache performance: lookups = 53 / hit rate = 35%
 # hash-table stats:
-# Load=29/8192=0%, Rehash=0, Collisions=1/47=2%
-# Finished Make data base on Fri May 27 11:31:26 2022
+# Load=34/8192=0%, Rehash=0, Collisions=1/53=2%
  
-make: *** No rule to make target 'all'.  Stop.
-
+# Finished Make data base on Sat May 28 11:03:24 2022
 
  
