@@ -11,5 +11,10 @@
 
 
 
-### Аскинема работы программы
+## Аскинемы работы программы
+
+### Работа с json файлами
 [![asciicast](https://asciinema.org/a/cBUajBOWTmPeCDIT2lzCapGDu.svg)](https://asciinema.org/a/cBUajBOWTmPeCDIT2lzCapGDu)
+
+### Работа с YAML и YML расширениями
+[![asciicast](https://asciinema.org/a/e6UoXSFrqmqj2luGcummezRb4.svg)](https://asciinema.org/a/e6UoXSFrqmqj2luGcummezRb4)
