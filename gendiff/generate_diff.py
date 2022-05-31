@@ -45,5 +45,5 @@ def generate_diff(path_file1, path_file2):
 
     result = make_diff(file1, file2)
 
-    print(json.dumps(result, indent=4, sort_keys=True))
+    print(result)
     return result

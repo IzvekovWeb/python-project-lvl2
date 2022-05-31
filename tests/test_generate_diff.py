@@ -5,9 +5,9 @@ def test_generate_diff():
     with open('tests/fixtures/gendiff_result.txt', 'r') as file:
         result = file.read()
 
-    assert generate_diff('gendiff/parsers/file1.json', 'gendiff/parsers/file2.json') == result
-    assert generate_diff('gendiff/parsers/file1.yaml', 'gendiff/parsers/file2.yml') == result
-    assert generate_diff('gendiff/parsers/file1.json', 'gendiff/parsers/file2.yml') == result
+    assert str(generate_diff('gendiff/parsers/file1.json', 'gendiff/parsers/file2.json')) == result
+    assert str(generate_diff('gendiff/parsers/file1.yaml', 'gendiff/parsers/file2.yml')) == result
+    assert str(generate_diff('gendiff/parsers/file1.json', 'gendiff/parsers/file2.yml')) == result
 
 
 def test_exception():
