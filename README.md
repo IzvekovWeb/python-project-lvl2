@@ -18,3 +18,6 @@
 
 ### Работа с YAML и YML расширениями
 [![asciicast](https://asciinema.org/a/e6UoXSFrqmqj2luGcummezRb4.svg)](https://asciinema.org/a/e6UoXSFrqmqj2luGcummezRb4)
+
+### Добавлен форматер вывода stylish
+[![asciicast](https://asciinema.org/a/h9YJVuyzFWmPpLv5UUNjAsqCt.svg)](https://asciinema.org/a/h9YJVuyzFWmPpLv5UUNjAsqCt)
