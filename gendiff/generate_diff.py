@@ -1,7 +1,17 @@
 from gendiff.parsers.parse import parse_by_extension
+from gendiff.formaters.stylish.stylish import stylish
+from gendiff.formaters.plain.plain import plain
 
 
-def generate_diff(path_file1, path_file2): # noqa
+def generate_diff(path_file1, path_file2, format='stylish'): # noqa
+    if format == 'stylish':
+        return stylish(create_diff(path_file1, path_file2))
+    else:
+        return plain(create_diff(path_file1, path_file2))
+
+
+
+def create_diff(path_file1, path_file2):
     file1, file2 = parse_by_extension(path_file1, path_file2)
 
     def make_diff(struct_1, struct_2):
