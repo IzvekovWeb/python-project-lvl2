@@ -45,9 +45,6 @@ def add_space(value):
     if isinstance(value, dict):
         result = {}
         for el, val in value.items():
-            if isinstance(val, dict):
-                result[f"  {el}"] = add_space(val)
-            else:
-                result[f"  {el}"] = val
+            result[f"  {el}"] = add_space(val) if isinstance(val, dict) else val
         return result
     return value
