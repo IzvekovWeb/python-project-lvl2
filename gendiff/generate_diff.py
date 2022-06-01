@@ -1,11 +1,9 @@
 from gendiff.parsers.parse import parse_by_extension
-import json
+
 
 def generate_diff(path_file1, path_file2):
     file1, file2 = parse_by_extension(path_file1, path_file2)
 
-    
-    
 
     def make_diff(struct_1, struct_2):
         f1_keys = list(struct_1.keys())
@@ -20,30 +18,39 @@ def generate_diff(path_file1, path_file2):
                     # Ключ есть в обоих файлах
                     if struct_1[key] == struct_2[key]:
                         # Значения равны
-                        res[key] =  struct_1[key]
+                        res[f"  {key}"] =  add_space(struct_1[key])
                     else:
                         # Значения различные
                         if isinstance(struct_1[key], dict) \
                             and isinstance(struct_2[key], dict):
 
                             subval = make_diff(struct_1[key], struct_2[key])
-                            res[key] =  subval
+                            res[f"  {key}"] =  subval
                         else:
-                            res[key] =  {
-                                    'value_1': struct_1[key], 
-                                    'value_2': struct_2[key],
-                                    'status': 'diff_val'
-                                }
+                            res[f"- {key}"] =  add_space(struct_1[key])
+                            res[f"+ {key}"] =  add_space(struct_2[key])
                 else:
                     # Ключ только в 1м файле
-                    res[key] =  {'value': struct_1[key], 'status': '-'}
+                    res[f"- {key}"] =  add_space(struct_1[key])
             else:
                 # Ключ только во 2м файле
-                res[key] =  {'value': struct_2[key], 'status': '+'}
+                res[f"+ {key}"] =  add_space(struct_2[key])
 
         return res
 
     result = make_diff(file1, file2)
-
-    print(result)
     return result
+
+
+def add_space(value):
+    if isinstance(value, dict):
+        result = {}
+        for el, val in value.items():
+            if isinstance(val, dict):
+                result[f"  {el}"] = add_space(val)
+            else:
+                result[f"  {el}"] = val
+        return result
+    return value
+
+print(generate_diff('gendiff/parsers/file1.json', 'gendiff/parsers/file2.json'))
