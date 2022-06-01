@@ -36,9 +36,7 @@ def generate_diff(path_file1, path_file2): # noqa
                 res[f"+ {key}"] = add_space(struct_2[key])
 
         return res
-
-    result = make_diff(file1, file2)
-    return result
+    return make_diff(file1, file2)
 
 
 def add_space(value):
