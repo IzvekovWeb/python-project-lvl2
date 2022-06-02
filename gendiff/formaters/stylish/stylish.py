@@ -1,5 +1,6 @@
 from gendiff.formaters.to_str import to_str
 
+
 def stylish(value, replacer=' ', space_count=2, _lvl=1):
     if isinstance(value, dict):
         result = '{\n'
@@ -13,6 +14,3 @@ def stylish(value, replacer=' ', space_count=2, _lvl=1):
     else:
         result = to_str(value)
     return result
-
-
-

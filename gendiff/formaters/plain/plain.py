@@ -1,10 +1,9 @@
 from gendiff.formaters.to_str import to_str
 
 
-def plain(tree):
+def plain(tree): # noqa
 
     def make_plain(node, path):
-        
         if isinstance(node, dict):
             result = ''
             for name, item in node.items():
@@ -19,26 +18,29 @@ def plain(tree):
                     else:
                         path.append(name)
                         result += make_plain(item['child'], path)
+                        path.pop()
                 else:
                     result += create_string(path, item, name)
-                
         else:
-            result = to_str(node)
+            result = node
         return result
 
-    res = make_plain(tree, [])
-
-    print(res)
-    return res
+    return make_plain(tree, [])
 
 
 def create_string(path, item, name):
     change = item['change']
-    path = f"{'.'.join(path)}.{name}"
+
+    if len(path) > 0:
+        path = f"'{'.'.join(path)}.{name}'"
+    else:
+        path = f"'{name}'"
+
     value = item['child']
     if isinstance(value, dict):
         value = '[complex value]'
-    value = to_str(value)
+    else:
+        value = to_str(value)
 
     string = f"Property {path} was {change}"
     if change == 'updated':
@@ -46,13 +48,8 @@ def create_string(path, item, name):
         string += f". From {value} to {to}"
     elif change == 'added':
         string += f" with value: {value}"
-    elif change == None:
+    elif change is None:
         return ''
-    
     string += '\n'
 
     return string
-
-
-rr = {'common': {'change': None, 'child': {'follow': {'change': 'added', 'child': False}, 'setting1': {'change': None, 'child': 'Value 1'}, 'setting2': {'change': 'removed', 'child': 200}, 'setting3': {'change': 'updated', 'child': True, 'to': None}, 'setting4': {'change': 'added', 'child': 'blah blah'}, 'setting5': {'change': 'added', 'child': {'key5': 'value5'}}, 'setting6': {'change': None, 'child': {'doge': {'change': None, 'child': {'wow': {'change': 'updated', 'child': '', 'to': 'so much'}}}, 'key': {'change': None, 'child': 'value'}, 'ops': {'change': 'added', 'child': 'vops'}}}}}, 'group1': {'change': None, 'child': {'baz': {'change': 'updated', 'child': 'bas', 'to': 'bars'}, 'foo': {'change': None, 'child': 'bar'}, 'nest': {'change': 'updated', 'child': {'key': 'value'}, 'to': 'str'}}}, 'group2': {'change': 'removed', 'child': {'abc': 12345, 'deep': {'id': 45}}}, 'group3': {'change': 'added', 'child': {'deep': {'id': {'number': 45}}, 'fee': 100500}}}
-plain(rr)

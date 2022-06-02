@@ -1,17 +1,16 @@
 from gendiff.parsers.parse import parse_by_extension
 from gendiff.formaters.stylish.stylish import stylish
-# from gendiff.formaters.plain.plain import plain
+from gendiff.formaters.plain.plain import plain
 
 
-def generate_diff(path_file1, path_file2, format): # noqa
+def generate_diff(path_file1, path_file2, format):
     if format == 'stylish':
         return stylish(create_diff(path_file1, path_file2))
     else:
         return plain(create_diff(path_file1, path_file2))
 
 
-
-def create_diff(path_file1, path_file2):
+def create_diff(path_file1, path_file2): # noqa
     file1, file2 = parse_by_extension(path_file1, path_file2)
 
     def make_diff(struct_1, struct_2):
@@ -37,8 +36,8 @@ def create_diff(path_file1, path_file2):
                             res[key] = {'change': None, 'child': sub_val}
                         else:
                             res[key] = {
-                                'change': 'updated', 
-                                'child': struct_1[key], 
+                                'change': 'updated',
+                                'child': struct_1[key],
                                 'to': struct_2[key]
                             }
                 else:
@@ -46,12 +45,9 @@ def create_diff(path_file1, path_file2):
                     res[key] = {'change': 'removed', 'child': struct_1[key]}
             else:
                 # Ключ только во 2м файле
-                res[key] = res[key] = {'change': 'added', 'child': struct_2[key]}
-
+                res[key] = {'change': 'added', 'child': struct_2[key]}
         return res
-    ress = make_diff(file1, file2)
-    print(ress)
-    # return ress
+    return make_diff(file1, file2)
 
 
 def add_space(value):
@@ -61,6 +57,3 @@ def add_space(value):
             result[f"  {el}"] = add_space(val) if isinstance(val, dict) else val
         return result
     return value
-
-
-create_diff('gendiff/parsers/file1.json', 'gendiff/parsers/file2.json')
