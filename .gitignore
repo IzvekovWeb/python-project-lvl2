@@ -7,6 +7,6 @@ dist/
 coverage.xml
 .pytest_cache/
 .vim
+.idea
 .vscode
-.vscode/settings.json
 launch.json

@@ -1,4 +1,4 @@
-
+from gendiff.formaters.to_str import to_str
 
 def stylish(value, replacer=' ', space_count=2, _lvl=1):
     if isinstance(value, dict):
@@ -15,8 +15,4 @@ def stylish(value, replacer=' ', space_count=2, _lvl=1):
     return result
 
 
-def to_str(value):
-    dict_ = {False: 'false', True: 'true', None: 'null'}
-    if value in dict_:
-        return dict_[value]
-    return str(value)
+

@@ -1,9 +1,9 @@
 from gendiff.parsers.parse import parse_by_extension
 from gendiff.formaters.stylish.stylish import stylish
-from gendiff.formaters.plain.plain import plain
+# from gendiff.formaters.plain.plain import plain
 
 
-def generate_diff(path_file1, path_file2, format='stylish'): # noqa
+def generate_diff(path_file1, path_file2, format): # noqa
     if format == 'stylish':
         return stylish(create_diff(path_file1, path_file2))
     else:
@@ -27,26 +27,31 @@ def create_diff(path_file1, path_file2):
                     # Ключ есть в обоих файлах
                     if struct_1[key] == struct_2[key]:
                         # Значения равны
-                        res[f"  {key}"] = add_space(struct_1[key])
+                        res[key] = {'change': None, 'child': struct_1[key]}
                     else:
                         # Значения различные
                         if isinstance(struct_1[key], dict) and \
                                 isinstance(struct_2[key], dict):
 
-                            subval = make_diff(struct_1[key], struct_2[key])
-                            res[f"  {key}"] = subval
+                            sub_val = make_diff(struct_1[key], struct_2[key])
+                            res[key] = {'change': None, 'child': sub_val}
                         else:
-                            res[f"- {key}"] = add_space(struct_1[key])
-                            res[f"+ {key}"] = add_space(struct_2[key])
+                            res[key] = {
+                                'change': 'updated', 
+                                'child': struct_1[key], 
+                                'to': struct_2[key]
+                            }
                 else:
                     # Ключ только в 1м файле
-                    res[f"- {key}"] = add_space(struct_1[key])
+                    res[key] = {'change': 'removed', 'child': struct_1[key]}
             else:
                 # Ключ только во 2м файле
-                res[f"+ {key}"] = add_space(struct_2[key])
+                res[key] = res[key] = {'change': 'added', 'child': struct_2[key]}
 
         return res
-    return make_diff(file1, file2)
+    ress = make_diff(file1, file2)
+    print(ress)
+    # return ress
 
 
 def add_space(value):
@@ -56,3 +61,6 @@ def add_space(value):
             result[f"  {el}"] = add_space(val) if isinstance(val, dict) else val
         return result
     return value
+
+
+create_diff('gendiff/parsers/file1.json', 'gendiff/parsers/file2.json')
