@@ -37,7 +37,7 @@ def create_string(item, name, lvl, spacer, change): # noqa
             else:
                 string += space + '- ' + name + ': ' +\
                     just_print(item['child'], lvl, spacer) + '\n'
-            
+
         else:
             string += space + '- ' + name + ': ' + item['child'] + '\n'
 
