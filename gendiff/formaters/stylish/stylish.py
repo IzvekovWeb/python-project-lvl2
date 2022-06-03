@@ -31,15 +31,25 @@ def create_string(item, name, lvl, spacer, change): # noqa
     string = ''
     if change == 'updated':
         if isinstance(item, dict) and 'child' in item:
-            if isinstance(item['child'], dict) or isinstance(item['to'], dict):
+            if isinstance(item['child'], dict):
                 string += space + '- ' + name + ': ' +\
                     '{\n' + just_print(item['child'], lvl + 1, spacer)
             else:
                 string += space + '- ' + name + ': ' +\
                     just_print(item['child'], lvl, spacer) + '\n'
+            
         else:
             string += space + '- ' + name + ': ' + item['child'] + '\n'
-        string += space + '+ ' + name + ': ' + to_str(item['to']) + '\n'
+
+        if isinstance(item, dict) and 'to' in item:
+            if isinstance(item['to'], dict):
+                string += space + '+ ' + name + ': ' +\
+                    '{\n' + just_print(item['to'], lvl + 1, spacer)
+            else:
+                string += space + '+ ' + name + ': ' +\
+                    just_print(item['to'], lvl, spacer) + '\n'
+        else:
+            string += space + '+ ' + name + ': ' + item['to'] + '\n'
     elif change == 'added':
         string += space + '+ ' + name + ': '
     elif change is None:
