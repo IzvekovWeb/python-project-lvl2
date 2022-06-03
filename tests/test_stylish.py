@@ -1,5 +1,5 @@
 from gendiff.formaters.stylish.stylish import stylish
-from gendiff.generate_diff import generate_diff
+from gendiff.gendiff import generate_diff
 
 def test_stylish():
     with open('tests/fixtures/stylish_result.txt', 'r') as file:

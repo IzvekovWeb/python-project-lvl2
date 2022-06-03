@@ -1,5 +1,5 @@
 from gendiff.formaters._json._json import _json
-from gendiff.generate_diff import generate_diff
+from gendiff.gendiff import generate_diff
 
 def test_json():
     with open('tests/fixtures/json_result.txt', 'r') as file:

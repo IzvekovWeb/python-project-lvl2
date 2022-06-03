@@ -1,5 +1,5 @@
 import pytest
-from gendiff.generate_diff import create_diff
+from gendiff.gendiff import create_diff
 
 def test_create_diff():
     with open('tests/fixtures/create_diff_result.txt', 'r') as file:

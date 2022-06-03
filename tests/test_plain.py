@@ -1,5 +1,5 @@
 from gendiff.formaters.plain.plain import plain
-from gendiff.generate_diff import generate_diff
+from gendiff.gendiff import generate_diff
 
 def test_plain():
     with open('tests/fixtures/plain_result.txt', 'r') as file:
