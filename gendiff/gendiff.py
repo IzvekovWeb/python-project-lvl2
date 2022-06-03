@@ -4,7 +4,7 @@ from gendiff.formaters.plain.plain import plain
 from gendiff.formaters._json._json import _json
 
 
-def generate_diff(path_file1, path_file2, format):
+def generate_diff(path_file1, path_file2, format='stylish'):
     if format == 'stylish':
         return stylish(create_diff(path_file1, path_file2))
     elif format == 'json':
