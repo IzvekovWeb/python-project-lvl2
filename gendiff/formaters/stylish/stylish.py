@@ -84,6 +84,7 @@ def make_space(lvl, spacer):
 
 def to_str(value):
     dict_ = {False: 'false', True: 'true', None: 'null'}
-    if value in dict_:
+    if (isinstance(value, bool) or value is None) and\
+            value in dict_:
         return dict_[value]
     return str(value)
