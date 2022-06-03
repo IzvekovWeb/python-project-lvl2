@@ -14,13 +14,30 @@
 ## Аскинемы работы программы
 
 ### Работа с json файлами
+
+    gendiff path/to/json1 path/to/json2
+
 [![asciicast](https://asciinema.org/a/cBUajBOWTmPeCDIT2lzCapGDu.svg)](https://asciinema.org/a/cBUajBOWTmPeCDIT2lzCapGDu)
 
 ### Работа с YAML и YML расширениями
 [![asciicast](https://asciinema.org/a/e6UoXSFrqmqj2luGcummezRb4.svg)](https://asciinema.org/a/e6UoXSFrqmqj2luGcummezRb4)
 
 ### Добавлен форматер вывода stylish
+
+
+    gendiff path1 path2 -f [stylish]  # Установлен по умолчанию
+
+
 [![asciicast](https://asciinema.org/a/h9YJVuyzFWmPpLv5UUNjAsqCt.svg)](https://asciinema.org/a/h9YJVuyzFWmPpLv5UUNjAsqCt)
 
-### Добавлен форматер вывода plain
+### Вывод в формате plain
+
+    gendiff path1 path2 -f plain
+
 [![asciicast](https://asciinema.org/a/bfOzVDwoRSybjqEObkt7JAPFa.svg)](https://asciinema.org/a/bfOzVDwoRSybjqEObkt7JAPFa)
+
+### Вывод в формате json
+
+    gendiff path1 path2 -f json
+
+[![asciicast](https://asciinema.org/a/2U8KDvUfMwjJTW9CSrsMeQqM1.svg)](https://asciinema.org/a/2U8KDvUfMwjJTW9CSrsMeQqM1)
