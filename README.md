@@ -21,3 +21,6 @@
 
 ### Добавлен форматер вывода stylish
 [![asciicast](https://asciinema.org/a/h9YJVuyzFWmPpLv5UUNjAsqCt.svg)](https://asciinema.org/a/h9YJVuyzFWmPpLv5UUNjAsqCt)
+
+### Добавлен форматер вывода plain
+[![asciicast](https://asciinema.org/a/bfOzVDwoRSybjqEObkt7JAPFa.svg)](https://asciinema.org/a/bfOzVDwoRSybjqEObkt7JAPFa)
