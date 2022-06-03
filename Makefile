@@ -4,7 +4,7 @@ install:
 
 # Запуск программ
 gendiff:
-	poetry run gendiff 'gendiff/parsers/file1.json' 'gendiff/parsers/file2.json'
+	poetry run gendiff 'gendiff/parsers/file1.yml' 'gendiff/parsers/file2.yml' -f plain
 #	poetry run gendiff
 
 # Сборка проекта в whl файл

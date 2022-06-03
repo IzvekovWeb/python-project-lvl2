@@ -40,25 +40,18 @@ def create_string(path, item, name): # noqa
     else:
         path = f"'{name}'"
 
-    def is_complex(value):
-        for val in value.values():
-            if isinstance(val, dict):
-                return True
-        return False
-
     value = item['child']
     if isinstance(value, dict):
-        is_comlex = is_complex(value)
-        if is_comlex:
-            value = '[complex value]'
-        else:
-            value = to_str(value)
+        value = '[complex value]'
     else:
         value = to_str(value)
 
     string = f"Property {path} was {change}"
     if change == 'updated':
-        to = to_str(item['to'])
+        if isinstance(item['to'], dict):
+            to = '[complex value]'
+        else:
+            to = to_str(item['to'])
         string += f". From {value} to {to}"
     elif change == 'added':
         string += f" with value: {value}"
@@ -74,4 +67,6 @@ def to_str(value):
     if (isinstance(value, bool) or value is None) and\
             value in dict_:
         return dict_[value]
+    if isinstance(value, int):
+        return int(value)
     return f"'{str(value)}'"
