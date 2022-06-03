@@ -1,4 +1,3 @@
-from gendiff.formaters.to_str import to_str
 
 
 def plain(tree): # noqa
@@ -53,3 +52,10 @@ def create_string(path, item, name):
     string += '\n'
 
     return string
+
+
+def to_str(value):
+    dict_ = {False: 'false', True: 'true', None: 'null'}
+    if value in dict_:
+        return dict_[value]
+    return f"'{str(value)}'"

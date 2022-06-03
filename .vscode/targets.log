@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jun  2 11:13:07 2022
+# Make data base, printed on Fri Jun  3 10:04:32 2022
 
 # Variables
 
@@ -33,7 +33,7 @@ CURDIR := /mnt/d/Pro100Sany/Python/Hexlet/python-project-lvl2
 # makefile
 SHELL = /bin/sh
 # environment
-VSCODE_NLS_CONFIG = {"locale":"ru","availableLanguages":{}}
+VSCODE_NLS_CONFIG = {"locale":"ru","availableLanguages":{"*":"ru"},"_languagePackId":"6c87e287770fa80b3245e0a037b935fb.ru","_translationsConfigFile":"/home/pro100sany/.vscode-server/data/clp/6c87e287770fa80b3245e0a037b935fb.ru/tcf.json","_cacheRoot":"/home/pro100sany/.vscode-server/data/clp/6c87e287770fa80b3245e0a037b935fb.ru","_resolvedLanguagePackCoreLocation":"/home/pro100sany/.vscode-server/data/clp/6c87e287770fa80b3245e0a037b935fb.ru/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5","_corruptedFile":"/home/pro100sany/.vscode-server/data/clp/6c87e287770fa80b3245e0a037b935fb.ru/corrupted.info","_languagePackSupport":true}
 # environment
 _ = /home/pro100sany/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/node
 # makefile (from 'Makefile', line 1)
@@ -55,7 +55,7 @@ PATH = /home/pro100sany/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-dbf07ac9-2f7c-4ae6-a8fd-bdfcb5c79fe1.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-14f70f7d-08c8-4b6a-9db6-2b5095b5580a.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -69,7 +69,7 @@ PWD = /mnt/d/Pro100Sany/Python/Hexlet/python-project-lvl2
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/360_interop
+WSL_INTEROP = /run/WSL/10_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -146,8 +146,10 @@ TERM = xterm-256color
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu
+# environment
+MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=67/1024=7%, Rehash=0, Collisions=4/92=4%
+# Load=68/1024=7%, Rehash=0, Collisions=4/93=4%
 
 # Pattern-specific Variable Values
 
@@ -155,9 +157,9 @@ WSL_DISTRO_NAME = Ubuntu
 
 # Directories
 
-# . (device 47, inode 2533274790410348): 21 files, no impossibilities.
+# . (device 47, inode 2533274790410348): 20 files, no impossibilities.
 
-# 21 files, no impossibilities in 1 directories.
+# 20 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -276,15 +278,15 @@ install:
 
 # No 'vpath' search paths.
 
+ 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 37 / storage = 332 B / avg = 8 B
- 
-# current buf: size = 8162 B / used = 332 B / count = 37 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 36 / storage = 336 B / avg = 9 B
+# current buf: size = 8162 B / used = 336 B / count = 36 / avg = 9 B
 
-# strcache performance: lookups = 57 / hit rate = 35%
+# strcache performance: lookups = 56 / hit rate = 35%
 # hash-table stats:
-# Load=37/8192=0%, Rehash=0, Collisions=1/57=2%
-# Finished Make data base on Thu Jun  2 11:13:07 2022
+# Load=36/8192=0%, Rehash=0, Collisions=1/56=2%
+# Finished Make data base on Fri Jun  3 10:04:33 2022
 
  
