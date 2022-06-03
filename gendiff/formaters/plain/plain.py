@@ -24,10 +24,15 @@ def plain(tree): # noqa
             result = node
         return result
 
-    return make_plain(tree, [])
+    result = make_plain(tree, [])
+    n_index = result.rfind('\n')
+    if (n_index + 1) == len(result):
+        result = result[:-1]
+
+    return result
 
 
-def create_string(path, item, name):
+def create_string(path, item, name): # noqa
     change = item['change']
 
     if len(path) > 0:
@@ -35,9 +40,19 @@ def create_string(path, item, name):
     else:
         path = f"'{name}'"
 
+    def is_complex(value):
+        for val in value.values():
+            if isinstance(val, dict):
+                return True
+        return False
+
     value = item['child']
     if isinstance(value, dict):
-        value = '[complex value]'
+        is_comlex = is_complex(value)
+        if is_comlex:
+            value = '[complex value]'
+        else:
+            value = to_str(value)
     else:
         value = to_str(value)
 
