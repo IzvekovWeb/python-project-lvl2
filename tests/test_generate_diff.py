@@ -1,5 +1,6 @@
 from gendiff import generate_diff
 
+
 def test_generate_diff():
     with open('tests/fixtures/result_plain', 'r') as file:
         plain_result = file.read()

@@ -1,6 +1,7 @@
 import pytest
 from gendiff.gendiff import create_diff
 
+
 def test_create_diff():
     with open('tests/fixtures/create_diff_result.txt', 'r') as file:
         result = file.read()
