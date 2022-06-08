@@ -6,7 +6,7 @@ def test_create_diff():
         result = file.read()
 
     assert str(create_diff('gendiff/parsers/file1.json', 'gendiff/parsers/file2.json')) == result
-    assert str(create_diff('gendiff/parsers/file1.yaml', 'gendiff/parsers/file2.yml')) == result
+    assert str(create_diff('gendiff/parsers/file1.yml', 'gendiff/parsers/file2.yml')) == result
     assert str(create_diff('gendiff/parsers/file1.json', 'gendiff/parsers/file2.yml')) == result
 
 

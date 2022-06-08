@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Jun  3 18:26:46 2022
+# Make data base, printed on Wed Jun  8 10:55:13 2022
 
 # Variables
 
@@ -55,7 +55,7 @@ PATH = /home/pro100sany/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-eed4cc07-7506-47ad-80a7-ddd8f97976c7.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-e15a8939-0d5e-4a1d-b982-83d01a356526.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -69,7 +69,7 @@ PWD = /mnt/d/Pro100Sany/Python/Hexlet/python-project-lvl2
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/17856_interop
+WSL_INTEROP = /run/WSL/13_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -146,8 +146,10 @@ TERM = xterm-256color
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu
+# environment
+MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=67/1024=7%, Rehash=0, Collisions=4/92=4%
+# Load=68/1024=7%, Rehash=0, Collisions=4/93=4%
 
 # Pattern-specific Variable Values
 
@@ -200,7 +202,7 @@ test-coverage:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-01 14:41:30.7243163
+#  Last modified 2022-06-03 22:16:45.0334337
 #  File has been updated.
 #  Successfully updated.
 
@@ -260,7 +262,7 @@ gendiff:
 #  File does not exist.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 7):
-	poetry run gendiff 'gendiff/parsers/file1.json' 'gendiff/parsers/file2.json'
+	poetry run gendiff 'gendiff/parsers/file1.yml' 'gendiff/parsers/file2.yml' -f plain
 
 install:
 #  Phony target (prerequisite of .PHONY).
@@ -276,15 +278,15 @@ install:
 
 # No 'vpath' search paths.
 
+ 
 # No general ('VPATH' variable) search path.
 
- 
 # strcache buffers: 1 (0) / strings = 36 / storage = 327 B / avg = 9 B
 # current buf: size = 8162 B / used = 327 B / count = 36 / avg = 9 B
 
 # strcache performance: lookups = 56 / hit rate = 35%
 # hash-table stats:
 # Load=36/8192=0%, Rehash=0, Collisions=1/56=2%
-# Finished Make data base on Fri Jun  3 18:26:46 2022
+# Finished Make data base on Wed Jun  8 10:55:13 2022
 
  
